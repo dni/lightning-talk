@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>lightning network fundamentals</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="plugin/highlight/monokai.css"> -->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <img src="dist/bolt.svg" alt="" width="66" />
+					<h2>lightning network fundamentals</h2>
+					<p>Eine Einführung für Beginner</p>
+					<p>
+						<small>erstellt von <a href="https://twitter.com/dnilabs">dni</a> und <a href="https://twitter.com/michael1011">michael1011</a></small>
+					</p>
+        </section>
+				<section>
+          <section>
+            <h2>Software Stack</h2>
+            <ul>
+              <li>Betriebssystem</li>
+              <li><a href="https://learnmeabitcoin.com/beginners/nodes" target="_blank">Bitcoin Core</a></li>
+              <li><a href="http://lightning.network/how-it-works/" target="_blank">Lightning (LND, CLightning)</a></li>
+              <li>Wallet</li>
+            </ul>
+          </section>
+          <section>
+            <p>Bitcoin Core</p>
+            <img width="30" src="dist/bolt.svg" alt=""/>
+            <p>Lightning (LND / CoreLightning)</p>
+            <img width="30" src="dist/bolt.svg" alt=""/>
+            <p>Wallet</p>
+          </section>
+        </section>
+				<section>
+          <section>
+          <h2>Wie funktionierts?</h2>
+          <ul>
+            <li><a href="">Peers</a></li>
+            <li><a href="https://docs.lightning.engineering/the-lightning-network/payment-channels/lifecycle-of-a-payment-channel">Channels</a></li>
+            <li>Routing</li>
+
+          </ul>
+          </section>
+          <section>
+            <h2>Channel LifeCycle</h2>
+            <h4>1. ONCHAIN open channel transaction</h4>
+            <div class="how how1">
+            <img src="dist/how-lightning.svg" alt="">
+            </div>
+            <h4>2. OFFCHAIN payment</h4>
+            <div class="how how2">
+            <img src="dist/how-lightning.svg" alt="">
+            </div>
+            <h4>3. ONCHAIN close channel transaction</h4>
+            <div class="how how3">
+            <img src="dist/how-lightning.svg" alt="">
+            </div>
+            <!-- <img src="dist/how-lightning.svg" alt=""> -->
+            <style>
+                .how {
+                  height: 208px;
+                  overflow: hidden;
+                }
+                .how img{
+                  max-height: none;
+                  width: 800px;
+                }
+                .how2 {
+                  height: 148px;
+                }
+                .how2 img {
+                  margin-top:-381px;
+                }
+                .how3 img {
+                  margin-top:-581px;
+                }
+            </style>
+            </section>
+            <section>
+              <h2>Routing</h2>
+              <img src="dist/routing.svg" alt="">
+            </section>
+        </section>
+
+        <section>
+          <h2>Use Cases für eigene Node</h2>
+          <ul>
+            <li>Be your own Bank</li>
+            <li>Custodian</li>
+            <li>Routing Nodes</li>
+          </ul>
+        </section>
+        <section>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Lgqh9aKl2mg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section>
+          <h2>Inbound Liquidity</h2>
+          <ul>
+            <li><a target="_blank" href="https://boltz.exchange/">Boltz.Exchange</a></li>
+            <li><a target="_blank" href="https://lightningnetwork.plus/">Lightning Network Plus</a></li>
+            <li><a target="_blank" href="https://amboss.space/magma">Amboss Magma</a></li>
+            <li><a target="_blank" href="https://www.lightningnode.info/createinboundliquidity">mehr...</a></li>
+          </ul>
+        </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<!-- <script src="plugin/notes/notes.js"></script> -->
+		<!-- <script src="plugin/markdown/markdown.js"></script> -->
+		<!-- <script src="plugin/highlight/highlight.js"></script> -->
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize();
+		</script>
+	</body>
+</html>
