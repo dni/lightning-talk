@@ -53,39 +53,15 @@
           </ul>
           </section>
           <section>
-            <h2>Channel LifeCycle</h2>
-            <h4>1. ONCHAIN open channel transaction</h4>
-            <div class="how how1">
-            <img src="dist/how-lightning.svg" alt="">
-            </div>
-            <h4>2. OFFCHAIN payment</h4>
-            <div class="how how2">
-            <img src="dist/how-lightning.svg" alt="">
-            </div>
-            <h4>3. ONCHAIN close channel transaction</h4>
-            <div class="how how3">
-            <img src="dist/how-lightning.svg" alt="">
-            </div>
+            <h5>Channel LifeCycle</h5>
+            <p style="font-size: 26px;">1. ONCHAIN open channel transaction</p>
+            <img width="500" src="dist/how-lightning1.svg" alt="">
+            <p style="font-size: 26px;">2. OFFCHAIN payment</p>
+            <img width="500" src="dist/how-lightning2.svg" alt="">
+            <p style="font-size: 26px;">3. ONCHAIN close channel transaction</p>
+            <img width="500" src="dist/how-lightning3.svg" alt="">
+
             <!-- <img src="dist/how-lightning.svg" alt=""> -->
-            <style>
-                .how {
-                  height: 208px;
-                  overflow: hidden;
-                }
-                .how img{
-                  max-height: none;
-                  width: 800px;
-                }
-                .how2 {
-                  height: 148px;
-                }
-                .how2 img {
-                  margin-top:-381px;
-                }
-                .how3 img {
-                  margin-top:-581px;
-                }
-            </style>
             </section>
             <section>
               <h2>Routing</h2>
@@ -102,9 +78,6 @@
           </ul>
         </section>
         <section>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/Lgqh9aKl2mg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </section>
-        <section>
           <h2>Inbound Liquidity</h2>
           <ul>
             <li><a target="_blank" href="https://boltz.exchange/">Boltz.Exchange</a></li>
@@ -117,14 +90,8 @@
 		</div>
 
 		<script src="dist/reveal.js"></script>
-		<!-- <script src="plugin/notes/notes.js"></script> -->
-		<!-- <script src="plugin/markdown/markdown.js"></script> -->
-		<!-- <script src="plugin/highlight/highlight.js"></script> -->
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize();
+			Reveal.initialize({ hash: true });
 		</script>
 	</body>
 </html>
