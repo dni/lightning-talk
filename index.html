@@ -1,97 +1,144 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>lightning network fundamentals</title>
+        <title>lightning network fundamentals</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/night.css">
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/night.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<!-- <link rel="stylesheet" href="plugin/highlight/monokai.css"> -->
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-        <section>
-          <img src="dist/bolt.svg" alt="" width="66" />
-					<h2>lightning network fundamentals</h2>
-					<p>Eine Einführung für Beginner</p>
-					<p>
-						<small>erstellt von <a href="https://twitter.com/dnilabs">dni</a> und <a href="https://twitter.com/michael1011">michael1011</a></small>
-					</p>
-        </section>
-				<section>
-          <section>
-            <h2>Software Stack</h2>
-            <ul>
-              <li>Betriebssystem</li>
-              <li><a href="https://learnmeabitcoin.com/beginners/nodes" target="_blank">Bitcoin Core</a></li>
-              <li><a href="http://lightning.network/how-it-works/" target="_blank">Lightning (LND, CLightning)</a></li>
-              <li>Wallet</li>
-            </ul>
-          </section>
-          <section>
-            <p>Bitcoin Core</p>
-            <img width="30" src="dist/bolt.svg" alt=""/>
-            <p>Lightning (LND / CoreLightning)</p>
-            <img width="30" src="dist/bolt.svg" alt=""/>
-            <p>Wallet</p>
-          </section>
-        </section>
-				<section>
-          <section>
-          <h2>Wie funktionierts?</h2>
-          <ul>
-            <li><a href="">Peers</a></li>
-            <li><a href="https://docs.lightning.engineering/the-lightning-network/payment-channels/lifecycle-of-a-payment-channel">Channels</a></li>
-            <li>Routing</li>
+        <!-- Theme used for syntax highlighted code -->
+        <!-- <link rel="stylesheet" href="plugin/highlight/monokai.css"> -->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <img src="dist/bolt.svg" alt="" width="66" />
+                    <h2>lightning network fundamentals</h2>
+                    <p>Eine Einführung für Beginner</p>
+                    <p>
+                    <small>erstellt von <a href="https://twitter.com/dnilabs">dni</a> und <a href="https://twitter.com/michael1011">michael1011</a></small>
+                    </p>
+                </section>
+                <section>
+                    <section>
+                        <h2>Software</h2>
+                        <!-- <ul> -->
+                        <!-- </ul> -->
+                        <p><a href="https://learnmeabitcoin.com/beginners/nodes" target="_blank">Bitcoin Core</a></p>
+                        <img width="30" src="dist/bolt.svg" alt=""/>
+                        <p><a href="http://lightning.network/how-it-works/" target="_blank">Lightning (LND, CoreLightning, Eclair)</a></p>
+                        <img width="30" src="dist/bolt.svg" alt=""/>
+                        <p>Wallet</p>
+                    </section>
+                    <section>
+                        <h2>Bitcoin</h2>
+                        <ul>
+                            <li>
+                                Settlement Layer für Lightning
+                                <ul>
+                                    <li>Kanal öffnen</li>
+                                    <li>Kanal schließen</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Lightning</h2>
+                        <ul>
+                            <li>Lightning + Bitcoin = immer Online</li>
+                            <li>Channel States</li>
+                            <li>Lightning Node im Netzwerk</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Wallet</h2>
+                        <ul>
+                            <li>Custidodial <small>(Bluewallet, Wallet of Satoshi, ...)</small></li>
+                            <li>Light Clients <small>(Breez, Phoenix, ...)</small></li>
+                            <li>
+                                Selfhosted <small>(LND, CoreLightning)</small>
+                                <ul>
+                                    <li>CLI <small>(lncli, lightning-cli)</small></li>
+                                    <li>GUI <small>(ride the lightning, thunderhub)</small></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Wie funktionierts?</h2>
+                        <ol>
+                            <li><a href="">Peers</a></li>
+                            <li>Gossip (Announcements, Fees)</li>
+                            <li><a href="https://docs.lightning.engineering/the-lightning-network/payment-channels/lifecycle-of-a-payment-channel">Channels</a></li>
+                            <li>Routing</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h5>Channel LifeCycle</h5>
+                        <p style="font-size: 26px;">1. ONCHAIN open channel transaction</p>
+                        <img width="500" src="dist/how-lightning1.svg" alt="">
+                        <p style="font-size: 26px;">2. OFFCHAIN payment</p>
+                        <img width="500" src="dist/how-lightning2.svg" alt="">
+                        <p style="font-size: 26px;">3. ONCHAIN close channel transaction</p>
+                        <img width="500" src="dist/how-lightning3.svg" alt="">
+                        <!-- <img src="dist/how-lightning.svg" alt=""> -->
+                    </section>
+                    <section>
+                        <h4>Onchain Transaktionen</h4>
+                        <p><a href="https://mempool.space/tx/18ce7b9473a1e903cc9ba0429ae38e8493c4be0454bbb41c3c91a4304aa65e8f">closing tx</a></p>
+                        <p><a href="https://mempool.space/tx/33fba9c58c87fcff4f067b216cae679638b583fcbdf1325498a0f78113be347a">opening tx</a></p>
+                    </section>
+                    <section>
+                        <h2>Routing</h2>
+                        <img src="dist/routing.svg" alt="">
+                    </section>
+                </section>
 
-          </ul>
-          </section>
-          <section>
-            <h5>Channel LifeCycle</h5>
-            <p style="font-size: 26px;">1. ONCHAIN open channel transaction</p>
-            <img width="500" src="dist/how-lightning1.svg" alt="">
-            <p style="font-size: 26px;">2. OFFCHAIN payment</p>
-            <img width="500" src="dist/how-lightning2.svg" alt="">
-            <p style="font-size: 26px;">3. ONCHAIN close channel transaction</p>
-            <img width="500" src="dist/how-lightning3.svg" alt="">
+                <section>
+                    <section>
+                        <h2>Appendix</h2>
+                        <ul>
+                            <li>Use Cases für Node</li>
+                            <li>Inbound Liquidity</li>
+                            <li>Fragen / Tech Support</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Use Cases für Node</h2>
+                        <ul>
+                            <li>Be your own Bank</li>
+                            <li>Custodian</li>
+                            <li>Routing Nodes</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Inbound Liquidity</h2>
+                        <ul>
+                            <li><a target="_blank" href="https://boltz.exchange/">Boltz.Exchange</a></li>
+                            <li><a target="_blank" href="https://lightningnetwork.plus/">Lightning Network Plus</a></li>
+                            <li><a target="_blank" href="https://amboss.space/magma">Amboss Magma</a></li>
+                            <li><a target="_blank" href="https://www.lightningnode.info/createinboundliquidity">mehr...</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Fragen?</h2>
+                        <img src="dist/bolt.svg" alt="" width="66" />
+                        <h2>Tech Support</h2>
+                    </section>
+                </section>
+            </div>
+        </div>
 
-            <!-- <img src="dist/how-lightning.svg" alt=""> -->
-            </section>
-            <section>
-              <h2>Routing</h2>
-              <img src="dist/routing.svg" alt="">
-            </section>
-        </section>
-
-        <section>
-          <h2>Use Cases für eigene Node</h2>
-          <ul>
-            <li>Be your own Bank</li>
-            <li>Custodian</li>
-            <li>Routing Nodes</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Inbound Liquidity</h2>
-          <ul>
-            <li><a target="_blank" href="https://boltz.exchange/">Boltz.Exchange</a></li>
-            <li><a target="_blank" href="https://lightningnetwork.plus/">Lightning Network Plus</a></li>
-            <li><a target="_blank" href="https://amboss.space/magma">Amboss Magma</a></li>
-            <li><a target="_blank" href="https://www.lightningnode.info/createinboundliquidity">mehr...</a></li>
-          </ul>
-        </section>
-			</div>
-		</div>
-
-		<script src="dist/reveal.js"></script>
-		<script>
-			Reveal.initialize({ hash: true });
-		</script>
-	</body>
+        <script src="dist/reveal.js"></script>
+        <script>
+            Reveal.initialize({ hash: true });
+        </script>
+    </body>
 </html>
